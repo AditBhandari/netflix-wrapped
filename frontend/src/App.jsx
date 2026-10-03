@@ -2,8 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import Wrapped from "./components/Wrapped";
 import UploadScreen from "./components/UploadScreen";
 
-const API_URL =
-  import.meta.env.VITE_API_URL || "https://netflix-wrapped.onrender.com";
+const API_URL = "https://netflix-wrapped.onrender.com";
 function App() {
   const [summary, setSummary] = useState(null);
   const [topSeries, setTopSeries] = useState({});
