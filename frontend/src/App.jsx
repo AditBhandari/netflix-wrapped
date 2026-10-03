@@ -3,8 +3,7 @@ import Wrapped from "./components/Wrapped";
 import UploadScreen from "./components/UploadScreen";
 
 const API_URL =
-  import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
-
+  import.meta.env.VITE_API_URL || "https://netflix-wrapped.onrender.com";
 function App() {
   const [summary, setSummary] = useState(null);
   const [topSeries, setTopSeries] = useState({});
