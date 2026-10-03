@@ -1,0 +1,295 @@
+/* =========================================================
+   NETFLIX WRAPPED — UPLOAD SCREEN
+   Same visual language as the Canva cover:
+   red field + massive black typography + minimal controls.
+   ========================================================= */
+
+.upload-screen {
+  position: relative;
+
+  width: 100vw;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+
+  overflow: hidden;
+
+  background: #a92318;
+  color: #000;
+
+  font-family: "Gotham", "Arial Black", Arial, Helvetica, sans-serif;
+}
+
+.upload-screen-content {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100svh;
+
+  padding: 42px 34px 50px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* Huge Canva-style title */
+.upload-title {
+  width: 100%;
+  margin: 0;
+
+  color: #000;
+
+  font-family: "Gotham", "Arial Black", Arial, Helvetica, sans-serif;
+  font-size: clamp(76px, 15vw, 215px);
+  font-weight: 900;
+
+  line-height: 0.76;
+  letter-spacing: -0.085em;
+
+  white-space: nowrap;
+  text-align: left;
+}
+
+/* Thin subtitle, centered like the Canva cover */
+.upload-subtitle {
+  margin: 42px 0 0;
+
+  color: #000;
+
+  font-family: Gotham, Arial, sans-serif;
+  font-size: clamp(27px, 4.4vw, 55px);
+  font-weight: 400;
+
+  line-height: 0.9;
+  letter-spacing: -0.065em;
+
+  text-align: center;
+}
+
+/* Controls are intentionally simple — no card, no border, no shadow */
+.upload-control {
+  position: absolute;
+
+  left: 50%;
+  bottom: 12%;
+
+  width: min(620px, calc(100% - 48px));
+
+  transform: translateX(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.upload-file-input {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.upload-file-label {
+  width: 100%;
+
+  min-height: 72px;
+
+  padding: 17px 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+
+  border: 3px solid #000;
+
+  color: #000;
+
+  cursor: pointer;
+
+  text-align: center;
+
+  transition:
+    background 140ms ease,
+    color 140ms ease;
+}
+
+.upload-file-label:hover,
+.upload-file-label:focus-within {
+  background: #000;
+  color: #a92318;
+}
+
+.upload-file-label-main {
+  font-size: clamp(17px, 2.2vw, 25px);
+  font-weight: 900;
+
+  line-height: 1;
+  letter-spacing: -0.035em;
+}
+
+.upload-file-label-small {
+  margin-top: 7px;
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 0.12em;
+}
+
+.upload-generate-button {
+  width: 100%;
+
+  min-height: 68px;
+
+  padding: 16px 24px;
+
+  border: 0;
+
+  background: #000;
+  color: #a92318;
+
+  font-family: "Gotham", "Arial Black", Arial, sans-serif;
+  font-size: clamp(19px, 2.5vw, 29px);
+  font-weight: 900;
+
+  letter-spacing: -0.035em;
+
+  cursor: pointer;
+
+  transition:
+    transform 140ms ease,
+    background 140ms ease,
+    color 140ms ease;
+}
+
+.upload-generate-button:hover {
+  transform: translateY(-2px);
+}
+
+.upload-generate-button:active {
+  transform: translateY(0);
+}
+
+.upload-generate-button:focus-visible,
+.upload-file-label:focus-visible {
+  outline: 3px solid #000;
+  outline-offset: 5px;
+}
+
+.upload-status {
+  position: absolute;
+
+  left: 50%;
+  bottom: 5%;
+
+  width: min(700px, calc(100% - 48px));
+
+  transform: translateX(-50%);
+
+  margin: 0;
+
+  font-size: 14px;
+  font-weight: 900;
+
+  text-align: center;
+}
+
+.upload-success {
+  color: #000;
+}
+
+.upload-error {
+  color: #000;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .upload-screen-content {
+    padding: 38px 22px 35px;
+  }
+
+  .upload-title {
+    font-size: 18.5vw;
+    line-height: 0.76;
+  }
+
+  .upload-subtitle {
+    margin-top: 36px;
+
+    font-size: 6.5vw;
+  }
+
+  .upload-control {
+    bottom: 11%;
+
+    width: calc(100% - 44px);
+
+    gap: 13px;
+  }
+
+  .upload-file-label {
+    min-height: 64px;
+
+    padding: 14px 16px;
+
+    border-width: 2px;
+  }
+
+  .upload-file-label-main {
+    font-size: 4.1vw;
+  }
+
+  .upload-file-label-small {
+    font-size: 8px;
+  }
+
+  .upload-generate-button {
+    min-height: 61px;
+
+    font-size: 5vw;
+  }
+
+  .upload-status {
+    bottom: 4%;
+
+    width: calc(100% - 44px);
+
+    font-size: 11px;
+  }
+}
+
+
+/* =========================================================
+   LAPTOP / DESKTOP
+   ========================================================= */
+
+@media (min-width: 900px) {
+
+  .upload-screen-content {
+    padding: 42px 3vw 50px;
+  }
+
+  .upload-control {
+    width: min(560px, 45vw);
+
+    bottom: 9%;
+  }
+}
